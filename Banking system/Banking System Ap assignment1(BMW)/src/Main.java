@@ -1,4 +1,3 @@
-import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class Main {
@@ -6,12 +5,12 @@ public class Main {
         BankAccount ba = new BankAccount(1000);
 
         // Deposit Transaction
-        DepositTransaction deposit = new DepositTransaction(200, new GregorianCalendar(2023, Calendar.MARCH, 25), "TX1001");
+        DepositTransaction deposit = new DepositTransaction(200, new GregorianCalendar(2023, 2, 25), "TX1001");
         deposit.apply(ba);
         deposit.printTransactionDetails();
 
         // Withdrawal Transaction
-        WithdrawalTransaction withdrawal = new WithdrawalTransaction(150, new GregorianCalendar(2023, Calendar.MARCH, 26), "TX1002");
+        WithdrawalTransaction withdrawal = new WithdrawalTransaction(150, new GregorianCalendar(2023, 2, 26), "TX1002");
         withdrawal.apply(ba);
         withdrawal.printTransactionDetails();
 
@@ -23,7 +22,7 @@ public class Main {
 
         // Testing Exception Handling
         try {
-            WithdrawalTransaction largeWithdrawal = new WithdrawalTransaction(2000, new GregorianCalendar(2023, Calendar.MARCH, 27), "TX1003");
+            WithdrawalTransaction largeWithdrawal = new WithdrawalTransaction(2000, new GregorianCalendar(2023, 2, 27), "TX1003");
             largeWithdrawal.apply(ba);
         } catch (Exception e) {
             System.out.println(e.getMessage());
